@@ -31,8 +31,14 @@ from routes.companies import router as companies_router
 from routes.analytics import router as analytics_router
 
 # MongoDB connection using settings
-client = AsyncIOMotorClient(settings.mongo_url)
-db = client[settings.db_name]
+try:
+    client = AsyncIOMotorClient(settings.mongo_url)
+    db = client[settings.db_name]
+    logger.info(f"Connected to MongoDB: {settings.db_name}")
+except Exception as e:
+    logger.error(f"Failed to connect to MongoDB: {e}")
+    client = None
+    db = None
 
 # Create the main app without a prefix
 app = FastAPI(
@@ -187,7 +193,26 @@ async def root():
 
 @api_router.get("/health")
 async def health_check():
-    return {"status": "healthy", "timestamp": datetime.utcnow()}
+    health_status = {"status": "healthy", "timestamp": datetime.utcnow()}
+    
+    # Check database connection
+    if db is not None:
+        try:
+            await db.command("ping")
+            health_status["database"] = "connected"
+        except Exception as e:
+            health_status["database"] = f"error: {str(e)}"
+            health_status["status"] = "degraded"
+    else:
+        health_status["database"] = "not configured"
+        health_status["status"] = "degraded"
+    
+    return health_status
+
+# Simple health check at root level for Railway
+@app.get("/health")
+async def simple_health():
+    return {"status": "ok"}
 
 # Product Management Routes
 @api_router.post("/products", response_model=Product)
@@ -379,7 +404,8 @@ logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
-    client.close()
+    if client:
+        client.close()
 
 if __name__ == "__main__":
     import uvicorn
