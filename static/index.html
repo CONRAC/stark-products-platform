@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stark Products - Premium Bathroom Accessories & Fittings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-blue-600">Stark Products</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="/static/products.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Products</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <button id="quote-btn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                            Request Quote
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="/" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="/static/products.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <button id="mobile-quote-btn" class="bg-green-600 hover:bg-green-700 text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">
+                    Request Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-6">Premium Bathroom Accessories</h1>
+                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                    Transform your bathroom with our extensive range of high-quality fixtures, fittings, and accessories. 
+                    Professional-grade products with competitive B2B pricing.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/static/products.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300">
+                        Browse Products
+                    </a>
+                    <button id="hero-quote-btn" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300">
+                        Request Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="truck" class="h-8 w-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Quick and reliable delivery across South Africa</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield-check" class="h-8 w-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quality Guarantee</h3>
+                    <p class="text-gray-600">Premium materials and superior craftsmanship</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="headphones" class="h-8 w-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Expert Support</h3>
+                    <p class="text-gray-600">Professional advice and customer service</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Preview Section -->
+    <div id="featured-products" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Explore our selection of premium bathroom accessories and fittings
+                </p>
+            </div>
+            
+            <!-- Featured Products Grid (Preview) -->
+            <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Featured products will be loaded here -->
+            </div>
+            
+            <div class="text-center">
+                <a href="/static/products.html" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                    <span>View All Products</span>
+                    <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                </a>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading" class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                <p class="mt-2 text-gray-600">Loading products...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">About Stark Products</h2>
+                    <p class="text-gray-600 mb-4">
+                        With over 25 years of experience in the bathroom accessories industry, Stark Products has been 
+                        South Africa's trusted partner for premium bathroom solutions. We specialize in providing 
+                        high-quality fixtures and fittings to contractors, retailers, and design professionals.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our extensive product range includes everything from towel rails and shower accessories to 
+                        complete bathroom fitting solutions, all backed by our commitment to quality and customer service.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-3"></i>
+                            <span class="text-gray-700">25+ Years Industry Experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Premium Quality Products</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Competitive B2B Pricing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Nationwide Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Why Choose Us?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i data-lucide="star" class="h-4 w-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Quality Assurance</h4>
+                                    <p class="text-blue-100 text-sm">Every product undergoes strict quality control</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i data-lucide="clock" class="h-4 w-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Fast Turnaround</h4>
+                                    <p class="text-blue-100 text-sm">Quick quotes and efficient order processing</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i data-lucide="users" class="h-4 w-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">B2B Focus</h4>
+                                    <p class="text-blue-100 text-sm">Dedicated support for trade professionals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ready to discuss your bathroom accessory needs? Contact our team for personalized service.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="phone" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-600">+27 11 123 4567</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600">info@starkproducts.co.za</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="map-pin" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Location</h3>
+                    <p class="text-gray-600">Johannesburg, South Africa</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="clock" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Hours</h3>
+                    <p class="text-gray-600">Mon-Fri: 8AM-5PM<br>Sat: 8AM-1PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg max-w-md w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold">Request Quote</h3>
+                    <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+                        <i data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+                
+                <form id="quote-form">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                            <input type="text" name="company_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Name</label>
+                            <input type="text" name="contact_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Items</label>
+                            <div id="quote-items" class="space-y-2">
+                                <div class="flex gap-2">
+                                    <input type="text" placeholder="Product name/code" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <input type="number" placeholder="Qty" min="1" class="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+                            </div>
+                            <button type="button" id="add-item" class="mt-2 text-sm text-blue-600 hover:text-blue-700">+ Add another item</button>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+                            <textarea name="notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Any specific requirements or notes..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex gap-3">
+                        <button type="button" id="cancel-quote" class="flex-1 px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">Cancel</button>
+                        <button type="submit" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Stark Products</h3>
+                    <p class="text-gray-300 text-sm">Your trusted partner for premium bathroom accessories and fittings since 1995.</p>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="/" class="hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="/static/products.html" class="hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="#about" class="hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>📞 +27 11 123 4567</li>
+                        <li>✉️ info@starkproducts.co.za</li>
+                        <li>📍 Johannesburg, South Africa</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Business Hours</h4>
+                    <ul class="space-y-1 text-sm text-gray-300">
+                        <li>Mon - Fri: 8:00 AM - 5:00 PM</li>
+                        <li>Saturday: 8:00 AM - 1:00 PM</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Stark Products. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let allProducts = [];
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Load and display featured products (preview)
+        async function loadFeaturedProducts() {
+            try {
+                const response = await fetch('/api/products');
+                if (!response.ok) throw new Error('Failed to fetch products');
+                
+                const products = await response.json();
+                // Show only first 6 products as featured
+                displayFeaturedProducts(products.slice(0, 6));
+                document.getElementById('loading').style.display = 'none';
+            } catch (error) {
+                console.error('Error loading products:', error);
+                document.getElementById('loading').innerHTML = 
+                    '<p class="text-red-600">Error loading products. Please try again.</p>';
+            }
+        }
+
+        function displayFeaturedProducts(products) {
+            const grid = document.getElementById('featured-grid');
+            
+            grid.innerHTML = products.map(product => {
+                const stockStatus = getStockStatus(product.stock_quantity);
+                const stockColor = getStockColor(stockStatus);
+                
+                const imageUrl = product.images && product.images.length > 0 ? product.images[0] : 'https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                
+                return `
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                        <div class="aspect-w-16 aspect-h-12 bg-gray-200">
+                            <img src="${imageUrl}" alt="${product.name}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-lg font-semibold text-gray-900">${product.name}</h3>
+                                <span class="px-2 py-1 text-xs rounded-full ${stockColor}">${stockStatus}</span>
+                            </div>
+                            
+                            <p class="text-gray-600 text-sm mb-3">${product.description}</p>
+                            
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm text-gray-500">ID: ${product.id.substring(0, 8)}...</span>
+                                <span class="text-sm text-gray-500">Stock: ${product.stock_quantity}</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-blue-600">R${(product.price_estimate || 0).toFixed(2)}</span>
+                                <button onclick="addToQuote('${product.id}', '${product.name}', ${product.price_estimate || 0})" 
+                                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
+                                    Add to Quote
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getStockStatus(quantity) {
+            if (quantity === 0) return 'Out of Stock';
+            if (quantity < 10) return 'Low Stock';
+            return 'In Stock';
+        }
+
+        function getStockColor(status) {
+            switch (status) {
+                case 'Out of Stock': return 'bg-red-100 text-red-800';
+                case 'Low Stock': return 'bg-yellow-100 text-yellow-800';
+                case 'In Stock': return 'bg-green-100 text-green-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        // Quote functionality
+        let quoteItems = [];
+
+        function addToQuote(productId, productName, price) {
+            quoteItems.push({ id: productId, name: productName, price: price, quantity: 1 });
+            showQuoteModal();
+        }
+
+        const quoteModal = document.getElementById('quote-modal');
+        const quoteBtn = document.getElementById('quote-btn');
+        const heroQuoteBtn = document.getElementById('hero-quote-btn');
+        const mobileQuoteBtn = document.getElementById('mobile-quote-btn');
+        const closeModal = document.getElementById('close-modal');
+        const cancelQuote = document.getElementById('cancel-quote');
+
+        function showQuoteModal() {
+            quoteModal.classList.remove('hidden');
+            quoteModal.classList.add('flex');
+        }
+
+        function hideQuoteModal() {
+            quoteModal.classList.add('hidden');
+            quoteModal.classList.remove('flex');
+        }
+
+        quoteBtn.addEventListener('click', showQuoteModal);
+        heroQuoteBtn.addEventListener('click', showQuoteModal);
+        mobileQuoteBtn.addEventListener('click', showQuoteModal);
+        closeModal.addEventListener('click', hideQuoteModal);
+        cancelQuote.addEventListener('click', hideQuoteModal);
+
+        // Add item functionality
+        const addItemBtn = document.getElementById('add-item');
+        const quoteItemsContainer = document.getElementById('quote-items');
+
+        addItemBtn.addEventListener('click', () => {
+            const newItem = document.createElement('div');
+            newItem.className = 'flex gap-2';
+            newItem.innerHTML = `
+                <input type="text" placeholder="Product name/code" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <input type="number" placeholder="Qty" min="1" class="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <button type="button" onclick="this.parentElement.remove()" class="px-2 py-2 text-red-600 hover:text-red-700">
+                    <i data-lucide="x" class="h-4 w-4"></i>
+                </button>
+            `;
+            quoteItemsContainer.appendChild(newItem);
+            lucide.createIcons();
+        });
+
+        // Quote form submission
+        const quoteForm = document.getElementById('quote-form');
+        quoteForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const items = Array.from(quoteItemsContainer.querySelectorAll('div')).map(div => {
+                const inputs = div.querySelectorAll('input');
+                if (inputs.length >= 2) {
+                    return {
+                        product: inputs[0].value,
+                        quantity: parseInt(inputs[1].value) || 1
+                    };
+                }
+            }).filter(item => item && item.product);
+
+            const quoteData = {
+                company_name: formData.get('company_name'),
+                contact_name: formData.get('contact_name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                items: items,
+                notes: formData.get('notes')
+            };
+
+            try {
+                const response = await fetch('/api/quotes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(quoteData)
+                });
+
+                if (response.ok) {
+                    alert('Quote request submitted successfully! We will contact you soon.');
+                    hideQuoteModal();
+                    quoteForm.reset();
+                    quoteItemsContainer.innerHTML = `
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Product name/code" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <input type="number" placeholder="Qty" min="1" class="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    `;
+                    quoteItems = [];
+                } else {
+                    const error = await response.json();
+                    alert('Error submitting quote: ' + (error.detail || 'Please try again'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error submitting quote. Please try again.');
+            }
+        });
+
+        // Initialize
+        loadFeaturedProducts();
+    </script>
+</body>
+</html>
