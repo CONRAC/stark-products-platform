@@ -83,14 +83,4 @@ JWT_SECRET_KEY=your-secret-key
 CORS_ORIGINS=https://yourdomain.railway.app
 ```
 
-## Company Information
 
-**Stark Products** has been South Africa's trusted partner for premium bathroom solutions since 1995.
-
-- 📞 Phone: +27 11 123 4567  
-- ✉️ Email: info@starkproducts.co.za
-- 🌍 Location: Johannesburg, South Africa
-
-## License
-
-© 2024 Stark Products. All rights reserved.
