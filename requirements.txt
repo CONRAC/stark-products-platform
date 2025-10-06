@@ -1,13 +1,11 @@
-fastap>=0.100.0
-uvicorn[standard]>=0.20.0
-motor>=3.5.0
-pydantic[email]>=2.0.0
+fastap
+uvicorn[standard]
+motor
+pydantic[email]
 python-multipart
 bcrypt
 python-jose[cryptography]
 passlib[bcrypt]
 python-dotenv
-fastapi-mail
-reportlab
 aiofiles
 jinja2i
