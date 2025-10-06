@@ -1,4 +1,4 @@
-fastapi>=0.10.0
+fasapi>=0.100.0
 uvicorn[standard]>=0.20.0
 motor>=3.5.0
 pydantic[email]>=2.0.0
@@ -10,4 +10,4 @@ python-dotenv
 fastapi-mail
 reportlab
 aiofiles
-jinja20
+jinja2
